@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./order.css">
+    <title>Orders</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="topbar">
+            <div id="topbarLeft">
+                <div id="brandWrap">
+                    <img src="./images/logo.58169365.png" alt="Logo">
+                    <p class="brandName">Kafene</p>
+                </div>
+                <nav>
+                    <a href="#" id="orders" class="topbarMenu">Orders</a>
+                    <a href="./product.html" id="products" class="topbarMenu">Products</a>
+                    <a href="./users.html" id="users" class="topbarMenu">Users</a>
+                    <a class="topbarMenu" id="logout">Logout</a>
+                </nav>
+            </div>
+        </div>
+        <div class="contentWrap">
+            <div class="mainWrap">
+                <h1 class="mainHeading">Orders</h1>
+                <div class="main">
+                    <div class="filterTab">
+                        <h3>Filters</h3>
+                        <div class="filterOptions">
+                            <p id="count">Count: 100</p>
+                            <label class="filterLabel">
+                                <input type="checkbox" name="orders-new" id="orders-new" checked>
+                                New
+                            </label>
+                            <label class="filterLabel">
+                                <input type="checkbox" name="orders-packed" id="orders-packed" checked>
+                                Packed
+                            </label>
+                            <label class="filterLabel">
+                                <input type="checkbox" name="orders-intransit" id="orders-intransit" checked>
+                                InTransit
+                            </label>
+                            <label class="filterLabel">
+                                <input type="checkbox" name="orders-delivered" id="orders-delivered" checked>
+                                Delivered
+                            </label>
+                        </div>
+                    </div>
+                    <div class="tableWrap">
+                        <table class="tableContent">
+                            <tr>
+                                <th>ID</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                            <tbody id="tableData">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="./order.js"></script>
+</body>
+
+</html>

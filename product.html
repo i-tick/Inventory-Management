@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./product.css">
+    <title>Products</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="topbar">
+            <div id="topbarLeft">
+                <div id="brandWrap">
+                    <img src="./images/logo.58169365.png" alt="Logo">
+                    <p class="brandName">Kafene</p>
+                </div>
+                <nav>
+                    <a href="./order.html" id="orders" class="topbarMenu">Orders</a>
+                    <a href="#" id="products" class="topbarMenu">Products</a>
+                    <a href="./users.html" id="users" class="topbarMenu">Users</a>
+                    <a class="topbarMenu" id="logout">Logout</a>
+                </nav>
+            </div>
+        </div>
+        <div class="contentWrap">
+            <div class="mainWrap">
+                <h1 class="mainHeading">Products</h1>
+                <div class="main">
+                    <div class="filterTab">
+                        <h3>Filters</h3>
+                        <div class="filterOptions">
+                            <p id="count">Count: 100</p>
+                            <label class="filterLabel">
+                                <input type="checkbox" name="products-expired" id="products-expired" checked>
+                                Expired
+                            </label>
+                            <label class="filterLabel">
+                                <input type="checkbox" name="products-low" id="products-low" checked>
+                                Low Stock
+                            </label>
+                        </div>
+                    </div>
+                    <div class="tableWrap">
+                        <table class="tableContent">
+                            <tr>
+                                <th>ID</th>
+                                <th>Product Name</th>
+                                <th>Product Brand</th>
+                                <th>Expiry Date </th>
+                                <th>Unit Price</th>
+                                <th>Stock</th>
+                            </tr>
+                            <tbody id="tableData">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="./product.js"></script>
+</body>
+
+</html>

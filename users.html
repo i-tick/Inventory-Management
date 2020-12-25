@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./users.css">
+    <title>Users</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="topbar">
+            <div id="topbarLeft">
+                <div id="brandWrap">
+                    <img src="./images/logo.58169365.png" alt="Logo">
+                    <p class="brandName">Kafene</p>
+                </div>
+                <nav>
+                    <a href="./order.html" id="orders" class="topbarMenu">Orders</a>
+                    <a href="./product.html" id="products" class="topbarMenu">Products</a>
+                    <a href="#" id="users" class="topbarMenu">Users</a>
+                    <a class="topbarMenu" id="logout">Logout</a>
+                </nav>
+            </div>
+        </div>
+        <div class="mainWrap">
+            <div class="main">
+                <h1>Users</h1>
+                <div class="userList">
+                    <form class="searchWrap">
+                        <input id="search" type="search" placeholder="Search by Name">
+                        <input type="reset" id="reset" class="resetButton" value="Reset">
+                    </form>
+                    <div class="userTableWrap">
+                        <table class="userTable">
+                            <tr>
+                                <th>ID</th>
+                                <th>User Avatar</th>
+                                <th>Full Name</th>
+                                <th>DoB</th>
+                                <th>Gender</th>
+                                <th>Current Location</th>
+                            </tr>
+                            <tbody id="tableData">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="./users.js"></script>
+</body>
+
+</html>

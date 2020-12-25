@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+*{
+    box-sizing: border-box;
+    font-family:  'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #f6f7fb;
+}
+#wrapper{
+    position: relative;
+}
+#topbar{
+    width: 100%;
+    padding: 0 48px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 2px 4px #ccc;
+    background-color: #fff;
+    justify-content: space-between;
+}
+#topbarLeft{
+    display: flex;
+    align-items: center;
+}
+#brandWrap{
+    margin-right: 36px;
+    display: flex;
+    align-items: center;
+}
+#brandWrap img{
+    width: 24px;
+    height: 28px;
+    margin-right: 8px;
+}
+.brandName{
+    font-size: 24px;
+    letter-spacing: -1px;
+    font-weight: 500;
+    margin: 0;
+    color: rgba(0,0,0,.8);
+}
+.topbarMenu{
+    display: inline-block;
+    text-decoration: none;
+    color: rgba(0,0,0,.8);
+    padding: 24px 0 16px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .6px;
+    margin: 0 10px;
+}
+#users{
+    color: #20b883;
+    border-bottom: 3px solid #20b883;
+}
+#logout{
+    position: absolute;
+    right: 40px;
+    cursor: pointer;
+}
+nav{
+    display: block;
+}
+.mainWrap{
+    margin-top: 100px;
+}
+.main{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 8% 4%;
+}
+.userList{
+    width: 100%;
+    padding: 24px 0;
+}
+.searchWrap{
+    width: 700px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+}
+#search{
+    width: calc(100% - 100px);
+    padding: 12px 24px;
+    font-size: 15px;
+    border: 0;
+    border-bottom: 2px solid #8c8c8c;
+    margin: 0 36px 0 0;
+    outline: none;
+}
+.resetButton{
+    display: inline-block;
+    border-radius: 30px;
+    padding: 14px 36px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: #20b883;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.userTableWrap{
+    width:100%;
+}
+.userTable{
+    width: 100%;
+    border-collapse: collapse;
+}
+.userTable th,.userTable td{
+    text-align: left;
+    padding: 12px 24px;
+    font-size: 14px;
+}
+tbody td{
+    background-color: #fff;
+    border-bottom: 4px solid #f6f7fb;
+}
+.tdSecondry{
+    color: #8c8c8c;
+}
+.tdPrimary{
+    color: rgba(0,0,0,.8);
+    font-weight: 500;
+}
