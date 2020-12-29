@@ -42,6 +42,12 @@ $(document).ready(function () {
   });
   //click listener for logout
   $("#logout").click(function (params) {
+    firebase.auth().signOut().then(function() {
+      localStorage.setItem("loginStatus", JSON.stringify(false));
+    location.href = "./index.html";
+    }).catch(function(error) {
+      // An error happened.
+    });
     localStorage.setItem("loginStatus", JSON.stringify(false));
     location.href = "./index.html";
   });

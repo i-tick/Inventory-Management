@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./signup.css">
+    <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <title>Login page</title>
 </head>
 
@@ -14,7 +22,7 @@
             <div id="topbarLeft">
                 <div id="brandWrap">
                     <img src="./images/logo.58169365.png" alt="Logo">
-                    <p class="brandName"></p>
+                    <p class="brandName">Kafene</p>
                 </div>
                 <nav>
                     <a href="#" class="topbarMenu">Orders</a>
@@ -28,17 +36,30 @@
                 <form class="formDiv">
                     <h1>Sign In</h1>
                     <input id="username" class="loginInput" type="text" name="username" placeholder="Enter Username">
-                    <input id="password" class="loginInput" type="password" name="password"
-                        placeholder="Enter Password">
-                    <input id="login" class="loginButton" type="submit" value="Login">
+                    <input id="password" class="loginInput" type="password" name="password" placeholder="Enter Password">
+
+                    <label class="row" name="role-name" for="role">Select Role: </label>
+                        <div class = "row">
+                            <input type="radio" id="role1" name="role" value="Admin" /> Admin
+                            <input type="radio" id="role2" name="role" value="Customer" checked="checked"/> Customer
+                        </div>
+                        <select name="admin-role" id="admin-role">
+                            <option value="inventory-manager">Inventory Manager</option>
+                            <option value="customer-helper">Customer Helper</option>
+                            <option value="security-manager">Security Manager</option>
+                            <option value="cashier">Cashier</option>
+                            <option value="delivery-manager">Delivery Manager</option>
+                          </select>                    
                     <input id="signup" class="loginButton" type="submit" value="Sign-Up">
+                    <input id="login" class="loginButton" type="submit" value="Login">
+
                 </form>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="./index.js"></script>
+    <script src="./signup.js"></script>
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     
@@ -66,8 +87,9 @@
           firebase.analytics();
         </script>
 
+
     <!-- Initialize Firebase -->
-    <!-- <script src="firebase.js"></script> -->
+    <script src="firebase.js"></script>
 </body>
 
 </html>
