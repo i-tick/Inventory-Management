@@ -18,12 +18,15 @@ $(document).ready(function () {
     }
     else {
       role = "Customer"
-      subrole = null;
+      subrole = " ";
     }
     let username = $("#username").val();
     let password = $("#password").val();
-    console.log(role);
-    console.log(subrole);
+    let name = $("#name").val();
+    let dob = $("#dob").val();
+    let gender = $("#gender").val();
+    // console.log(role);
+    // console.log(subrole);
 
 
 
@@ -31,46 +34,47 @@ $(document).ready(function () {
       .then((user) => {
         const ref = firebase.database().ref("/users/" + user.user.uid);
         ref.set({
-          username: user.user.displayName,
+          name: name,
+          dob: dob,
+          gender: gender,
           email: user.user.email,
-          profile_picture: user.user.photoURL,
-          phoneNumber: user.user.phoneNumber,
           role: role,
-          subrole: subrole
+          subrole: subrole,
+          useruid: user.user.uid
         }).then(success => {
           // location.href = "./order.html";
           if (role == "Admin") {
-            if (subrole == "inventory-manager") {
+            if (subrole == "Inventory Manager") {
               // Inventory Manager
-              // location.href = "./order.html";
-              alert(subrole)
-            } else if (subrole == "customer-helper") 
+              location.href = "./inventory_management_products.html";
+              // alert(subrole)
+            } else if (subrole == "Customer Helper") 
             {
               // Customer Helper
               // location.href = "./order.html";
-              alert(subrole)
-            } else if (subrole == "security-manager") 
+              // alert(subrole)
+            } else if (subrole == "Security Manager") 
             {
               // Security Manager
-              // location.href = "./order.html";
-              alert(subrole)
-            } else if (subrole == "cashier") 
+              location.href = "./security_manager.html";
+              // alert(subrole)
+            } else if (subrole == "Cashier") 
             {
               // Cashier
-              // location.href = "./order.html";
-              alert(subrole)
-            } else if (subrole == "delivery-manager") 
+              location.href = "./cashier_order.html";
+              // alert(subrole)
+            } else if (subrole == "Delivery Manager") 
             {
               // Delivery Manager
-              // location.href = "./order.html";
-              alert(subrole)
+              location.href = "./delivery_manager_order.html";
+              // alert(subrole)
             }
           }
 
           else if (role == "Customer")
           {
             // location.href = "./order.html";
-            alert(role)
+            // alert(role)
           }
         })
           .catch((error) => {

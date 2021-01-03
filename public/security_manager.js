@@ -142,6 +142,8 @@ $(document).ready(function () {
               var val = data.val();
               console.log(val.id);
               createItems(val)
+              $("#count").text(`Count: ${$("#tableData tr:visible").length}`);
+
               // $.each(data, function (index, responseObj) {
               //   console.log(responseObj);
               // });

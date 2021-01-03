@@ -13,12 +13,12 @@
         <div id="topbar">
             <div id="topbarLeft">
                 <div id="brandWrap">
-                    <img src="./images/logo.58169365.png" alt="Logo">
-                    <p class="brandName">Kafene</p>
+                    <img src="./logo.png" alt="Logo">
+                    <p class="brandName">Invenory Management</p>
                 </div>
                 <nav>
                     <a href="./order.html" id="orders" class="topbarMenu">Orders</a>
-                    <a href="./product.html" id="products" class="topbarMenu">Products</a>
+                    <a href="./inventory_manager_products.html" id="products" class="topbarMenu">Products</a>
                     <a href="#" id="users" class="topbarMenu">Users</a>
                     <a class="topbarMenu" id="logout">Logout</a>
                 </nav>
@@ -28,19 +28,18 @@
             <div class="main">
                 <h1>Users</h1>
                 <div class="userList">
-                    <form class="searchWrap">
+                    <!-- <form class="searchWrap">
                         <input id="search" type="search" placeholder="Search by Name">
                         <input type="reset" id="reset" class="resetButton" value="Reset">
-                    </form>
+                    </form> -->
                     <div class="userTableWrap">
                         <table class="userTable">
                             <tr>
                                 <th>ID</th>
-                                <th>User Avatar</th>
                                 <th>Full Name</th>
                                 <th>DoB</th>
                                 <th>Gender</th>
-                                <th>Current Location</th>
+                                <th>Employee Type</th>
                             </tr>
                             <tbody id="tableData">
 
@@ -54,6 +53,35 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="./users.js"></script>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+                 https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBLiYXzgpFhyzhjFL0rUmnmQLCRvtbMiL4",
+            authDomain: "inventory-management-1e631.firebaseapp.com",
+            databaseURL: "https://inventory-management-1e631-default-rtdb.firebaseio.com",
+            projectId: "inventory-management-1e631",
+            storageBucket: "inventory-management-1e631.appspot.com",
+            messagingSenderId: "705925772648",
+            appId: "1:705925772648:web:68a8ca2ad0406df9e292dd",
+            measurementId: "G-QL4LLB68JX"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+    </script>
 </body>
 
 </html>

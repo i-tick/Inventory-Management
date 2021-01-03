@@ -16,31 +16,37 @@ $(document).ready(function () {
         ref.on('value', function (snapshot) {
           //console.log(snapshot.val());
           var role = snapshot.val().role;
-          alert(role)
+          // alert(role)
           if (role == "Customer") {
             // Customer
-            alert(role);
+            // alert(role);
           }
           else if (role == "Admin") {
             var subrole = snapshot.val().subrole;
-            if (subrole == "inventory-manager") {
+            if (subrole == "Inventory Manager") {
               // Inventory Manager
-              alert(subrole);
+              // alert(subrole);
+              location.href = "./inventory_management_products.html"
             }
-            else if (subrole == "cashier") {
+            else if (subrole == "Cashier") {
               // Customer Helper
-              alert(subrole);
+              // alert(subrole);
+              location.href = "./cashier_order.html";
+
             }
-            else if (subrole == "delivery-manager") {
+            else if (subrole == "Delivery Manager") {
               // Delivery Manager
-              alert(subrole);
+              // alert(subrole);
+              location.href = "./delivery_manager_order.html";
+
             }
-            else if (subrole == "security-manager") {
+            else if (subrole == "Security Manager") {
               // Cashier
-              alert(subrole);
+              // alert(subrole);
+              location.href = "./security_manager.html";
             }
 
-            else if (subrole == "customer-helper") {
+            else if (subrole == "Customer Helper") {
               // Security Manager
               alert(subrole);
             }

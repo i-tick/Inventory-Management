@@ -21,22 +21,26 @@
         <div id="topbar">
             <div id="topbarLeft">
                 <div id="brandWrap">
-                    <img src="./images/logo.58169365.png" alt="Logo">
-                    <p class="brandName">Kafene</p>
+                    <img src="./logo.png" alt="Logo">
+                    <p class="brandName">Inventory Management</p>
                 </div>
                 <nav>
-                    <a href="#" class="topbarMenu">Orders</a>
+                    <!-- <a href="#" class="topbarMenu">Orders</a>
                     <a href="#" class="topbarMenu">Products</a>
-                    <a href="#" class="topbarMenu">Users</a>
+                    <a href="#" class="topbarMenu">Users</a> -->
                 </nav>
             </div>
         </div>
         <div id="loginWrap">
             <div>
                 <form class="formDiv">
-                    <h1>Sign In</h1>
+                    <h1>Sign Up</h1>
+                    <input id="name" class="loginInput" type="text" name="name" placeholder="Enter Name">
+                    <input id="dob" class="loginInput" type="text" name="dob" placeholder="Enter DOB (dd-Mon-yyyy)">
+                    <input id="gender" class="loginInput" type="text" name="gender" placeholder="Enter Gender">
                     <input id="username" class="loginInput" type="text" name="username" placeholder="Enter Username">
                     <input id="password" class="loginInput" type="password" name="password" placeholder="Enter Password">
+                    
 
                     <label class="row" name="role-name" for="role">Select Role: </label>
                         <div class = "row">
@@ -44,11 +48,11 @@
                             <input type="radio" id="role2" name="role" value="Customer" checked="checked"/> Customer
                         </div>
                         <select name="admin-role" id="admin-role">
-                            <option value="inventory-manager">Inventory Manager</option>
-                            <option value="customer-helper">Customer Helper</option>
-                            <option value="security-manager">Security Manager</option>
-                            <option value="cashier">Cashier</option>
-                            <option value="delivery-manager">Delivery Manager</option>
+                            <option value="Inventory Manager">Inventory Manager</option>
+                            <option value="Customer Helper">Customer Helper</option>
+                            <option value="Security Manager">Security Manager</option>
+                            <option value="Cashier">Cashier</option>
+                            <option value="Delivery Manager">Delivery Manager</option>
                           </select>                    
                     <input id="signup" class="loginButton" type="submit" value="Sign-Up">
                     <input id="login" class="loginButton" type="submit" value="Login">
@@ -88,8 +92,8 @@
         </script>
 
 
-    <!-- Initialize Firebase -->
-    <script src="firebase.js"></script>
+    <!-- Initialize Firebase
+    <script src="firebase.js"></script> -->
 </body>
 
 </html>
