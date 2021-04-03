@@ -1,0 +1,21 @@
+{
+  "amount" : 500,
+  "customerName" : "Aitik",
+  "deliveryStatus" : "Delivered",
+  "id" : "001",
+  "orderDate" : "12-Jan-2020",
+  "orderTime" : "11:50 AM",
+  "paymentStatus" : "Paid",
+  "products" : {
+    "01" : {
+      "amount" : 5,
+      "quantity" : 5
+    },
+    "02" : {
+      "amount" : 5,
+      "quantity" : 6
+    }
+  },
+  "queryresolved" : "Yes",
+  "userid" : "1g7A6tLfFCNAPggWHOeQC3FWaAi2"
+}

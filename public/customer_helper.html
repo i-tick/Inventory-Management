@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/security_manager.css">
-    <title>Security Manager</title>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-
+    <link rel="stylesheet" href="css/customer_helper.css">
+    <title>Customer Helper</title>
     <style>
+
         .modal {
             display: none;
             position: fixed;
@@ -104,6 +103,92 @@
             border-bottom: #a99567 1px solid;
             color: #a99567;
         }
+
+
+
+
+
+
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Button used to open the contact form - fixed at the bottom of the page */
+        .open-button {
+            background-color: #555;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+        }
+
+        /* The popup form - hidden by default */
+        .form-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        /* Full-width input fields */
+        .form-container input[type=text],
+        .form-container input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        /* When the inputs get focus, do something */
+        .form-container input[type=text]:focus,
+        .form-container input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/login button */
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: red;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -116,33 +201,32 @@
                     <p class="brandName">Inventory Management</p>
                 </div>
                 <nav>
-                    <!-- <a href="./order.html" id="orders" class="topbarMenu">Orders</a> -->
-                    <a href="#" id="products" class="topbarMenu">Products</a>
-                    <!-- <a href="./users.html" id="users" class="topbarMenu">Users</a> -->
+                    <a href="#" id="orders" class="topbarMenu">Orders</a>
+                    <!-- <a href="./product.html" id="products" class="topbarMenu">Products</a>
+                    <a href="./users.html" id="users" class="topbarMenu">Users</a> -->
                     <a class="topbarMenu" id="logout">Logout</a>
                 </nav>
             </div>
         </div>
         <div class="contentWrap">
             <div class="mainWrap">
-                <h1 class="mainHeading">Products</h1>
+                <h1 class="mainHeading">Customer Helper</h1>
+                <!-- <h3 class="mainHeading">Orders</h3> -->
                 <div class="main">
                     <div class="filterTab">
                         <h3>Filters</h3>
                         <div class="filterOptions">
-                            <p id="count">Count: 100</p>
+                            <p id="count">Count: </p>
                             <label class="filterLabel">
-                                <input type="checkbox" name="products-expired" id="products-expired" checked>
-                                Expired
+                                <input type="checkbox" name="orders-resolved" id="orders-resolved" checked>
+                                Query Resolved
                             </label>
                             <label class="filterLabel">
-                                <input type="checkbox" name="products-low" id="products-low" checked>
-                                Low Stock
+                                <input type="checkbox" name="orders-notresolved" id="orders-notresolved" checked>
+                                Query Not Resolved
                             </label>
 
-
-                            
-                                <button class="button" data-modal="modalOne">Send Alert</button>
+                            <button class="button" data-modal="modalOne">Address Query</button>
                             
 
                             <div id="modalOne" class="modal">
@@ -150,7 +234,7 @@
                                     <div class="contact-form">
                                         <a class="close">&times;</a>
                                         <form>
-                                            <h2>Send Alert</h2>
+                                            <h2>Address Query</h2>
                                             <div>
                                                 <input class="fname" type="email" id="email"
                                                     placeholder="Sender Email Id">
@@ -170,17 +254,42 @@
                                     </div>
                                 </div>
                             </div>
+
+
+                            <button class="open-button" onclick="openForm()">Update Status</button>
+
+                            <div class="form-popup" id="myForm">
+                                <form class="form-container">
+                                    <!-- <h2>Add/ Update Products</h2> -->
+                                    <label for="id">
+                                        <!-- <strong>Product Id</strong> -->
+                                    </label>
+                                    <input type="text" id="userid" placeholder="User Id" name="userid" required>
+                                    <label for="orderid">
+                                        <!-- <strong>Product Name</strong> -->
+                                    </label>
+                                    <input type="text" id="orderid" placeholder="Order Id" name="orderid" required>
+                                    <label for="querystatus">
+                                        <!-- <strong>Expiry Date</strong> -->
+                                    </label>
+                                    <input type="text" id="querystatus" placeholder="Query Status"
+                                        name="querystatus" required>
+                                    <button id="submit" type="submit" class="btn">Update Status</button>
+                                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <div class="tableWrap">
                         <table class="tableContent">
                             <tr>
                                 <th>ID</th>
-                                <th>Product Name</th>
-                                <th>Product Brand</th>
-                                <th>Expiry Date </th>
-                                <th>Unit Price</th>
-                                <th>Stock</th>
+                                <th>User Id</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Query Resolved</th>
+                                <th>Products</th>
                             </tr>
                             <tbody id="tableData">
                             </tbody>
@@ -192,8 +301,29 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="js/security_manager.js"></script>
-
+    <script src="js/customer_helper.js"></script>
+    <script>
+        let modalBtns = [...document.querySelectorAll(".button")];
+        modalBtns.forEach(function (btn) {
+            btn.onclick = function () {
+                let modal = btn.getAttribute('data-modal');
+                document.getElementById(modal)
+                    .style.display = "block";
+            }
+        });
+        let closeBtns = [...document.querySelectorAll(".close")];
+        closeBtns.forEach(function (btn) {
+            btn.onclick = function () {
+                let modal = btn.closest('.modal');
+                modal.style.display = "none";
+            }
+        });
+        window.onclick = function (event) {
+            if (event.target.className === "modal") {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
 
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -221,47 +351,17 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-    </script>
-
-
-    <script>
-        let modalBtns = [...document.querySelectorAll(".button")];
-        modalBtns.forEach(function (btn) {
-            btn.onclick = function () {
-                let modal = btn.getAttribute('data-modal');
-                document.getElementById(modal)
-                    .style.display = "block";
-            }
-        });
-        let closeBtns = [...document.querySelectorAll(".close")];
-        closeBtns.forEach(function (btn) {
-            btn.onclick = function () {
-                let modal = btn.closest('.modal');
-                modal.style.display = "none";
-            }
-        });
-        window.onclick = function (event) {
-            if (event.target.className === "modal") {
-                event.target.style.display = "none";
-            }
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
         }
-    </script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-    <script>
-        function sendemail() {
-            console.log("aitik");
-            let mssg = $("#message").val();
-            let sub = $("#subject").val();
-
-
-            url = "https://mail.google.com/mail/?view=cm&fs=1&to=aitikdandapat@gmail.com&su=" + sub + "&body=" + mssg;
-            window.open(url);
-
-            //    href="" target="_blank"
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
         }
+
     </script>
+
+
 </body>
 
 </html>
