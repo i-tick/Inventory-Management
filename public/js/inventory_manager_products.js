@@ -68,7 +68,7 @@ $(document).ready(function () {
     }
     var expireTime = new Date(expirydate[2], expirydate[1] - 1, expirydate[0]);
     console.log(`${timeNow} ${expireTime.getTime()}`);
-    return timeNow > expireTime.getTime();
+    return timeNow < expireTime.getTime();
   }
 
   function createItems(data) {
@@ -97,7 +97,7 @@ $(document).ready(function () {
     );
 
     //checking if stock is low
-    if (data.stock < 100) {
+    if (data.stock >= 100) {
       tableRow.append($("<td>").addClass("tdSecondry low").text(data.stock));
     } else {
       tableRow.append($("<td>").addClass("tdSecondry").text(data.stock));
